@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    // 🔴 从 es5 提升（不影响浏览器，由 bundler 决定）
+    "target": "ES2020",
+
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -13,14 +16,15 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+
+    // 🔴 关键：让 TS 使用 Node 的 ESM 解析规则
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

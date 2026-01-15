@@ -1,0 +1,7 @@
+[
+    { "from": "用户A", "to": "用户B", "type": "text", "content": "你好呀！", "time": "2026-01-12 09:00" },
+    { "from": "用户B", "to": "用户A", "type": "text", "content": "嗨，你早啊~", "time": "2026-01-12 09:01" },
+    { "from": "用户A", "to": "用户B", "type": "emoji", "content": "😊", "time": "2026-01-12 09:04" },
+    { "from": "用户B", "to": "用户A", "type": "image", "content": "https://via.placeholder.com/80", "time": "2026-01-12 09:10" },
+    { "from": "用户A", "to": "用户B", "type": "text", "content": "下午见", "time": "2026-01-12 09:46" }
+]

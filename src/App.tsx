@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import chatData from './chatData.json';
+import ChatBubble from './components/ChatBubble';
+import './i18n';
+import { useTranslation } from 'react-i18next';
 
-function App() {
+const App: React.FC = () => {
+  const { t } = useTranslation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-screen w-screen bg-gray-100 flex flex-col p-4 overflow-y-auto">
+      <h1 className="text-xl font-bold mb-4">{t('wechat_chat_demo')}</h1>
+      <div className="flex flex-col space-y-1">
+        {chatData.map((msg, idx) => (
+          <ChatBubble
+            key={idx}
+            content={msg.content}
+            type={msg.type as 'text' | 'emoji' | 'image'}
+            isLeft={msg.from === t('userB')}
+            time={msg.time}
+          />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
